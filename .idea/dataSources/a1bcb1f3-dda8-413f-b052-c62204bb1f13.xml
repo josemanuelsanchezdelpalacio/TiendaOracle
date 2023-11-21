@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="tienda@localhost">
+  <database-model serializer="dbm" dbms="ORACLE" family-id="ORACLE" format-version="4.49">
+    <root id="1">
+      <IntrospectionLevel>3</IntrospectionLevel>
+      <ServerVersion>23.0.0.0.0</ServerVersion>
+      <TablespacesHash>2130123946</TablespacesHash>
+    </root>
+    <schema id="2" parent="1" name="ANONYMOUS">
+      <ObjectId>88</ObjectId>
+    </schema>
+    <schema id="3" parent="1" name="APPQOSSYS">
+      <ObjectId>78</ObjectId>
+    </schema>
+    <schema id="4" parent="1" name="AUDSYS">
+      <ObjectId>8</ObjectId>
+    </schema>
+    <schema id="5" parent="1" name="CTXSYS">
+      <ObjectId>120</ObjectId>
+    </schema>
+    <schema id="6" parent="1" name="DBSFWUSER">
+      <ObjectId>43</ObjectId>
+    </schema>
+    <schema id="7" parent="1" name="DBSNMP">
+      <ObjectId>77</ObjectId>
+    </schema>
+    <schema id="8" parent="1" name="DGPDB_INT">
+      <ObjectId>64</ObjectId>
+    </schema>
+    <schema id="9" parent="1" name="DIP">
+      <ObjectId>26</ObjectId>
+    </schema>
+    <schema id="10" parent="1" name="DVF">
+      <ObjectId>131</ObjectId>
+    </schema>
+    <schema id="11" parent="1" name="DVSYS">
+      <ObjectId>1279990</ObjectId>
+    </schema>
+    <schema id="12" parent="1" name="GGSHAREDCAP">
+      <ObjectId>55</ObjectId>
+    </schema>
+    <schema id="13" parent="1" name="GGSYS">
+      <ObjectId>85</ObjectId>
+    </schema>
+    <schema id="14" parent="1" name="GSMADMIN_INTERNAL">
+      <ObjectId>24</ObjectId>
+    </schema>
+    <schema id="15" parent="1" name="GSMCATUSER">
+      <ObjectId>84</ObjectId>
+    </schema>
+    <schema id="16" parent="1" name="GSMUSER">
+      <ObjectId>25</ObjectId>
+    </schema>
+    <schema id="17" parent="1" name="LBACSYS">
+      <ObjectId>129</ObjectId>
+    </schema>
+    <schema id="18" parent="1" name="MDDATA">
+      <ObjectId>127</ObjectId>
+    </schema>
+    <schema id="19" parent="1" name="MDSYS">
+      <ObjectId>126</ObjectId>
+    </schema>
+    <schema id="20" parent="1" name="OPS$ORACLE">
+      <ObjectId>133</ObjectId>
+    </schema>
+    <schema id="21" parent="1" name="OUTLN">
+      <ObjectId>13</ObjectId>
+    </schema>
+    <schema id="22" parent="1" name="PDBADMIN">
+      <ObjectId>132</ObjectId>
+    </schema>
+    <schema id="23" parent="1" name="PUBLIC">
+      <CreatedTimestamp>2023-09-01.17:13:00</CreatedTimestamp>
+      <IntrospectionVersion>200820</IntrospectionVersion>
+      <LocalIntrospectionTimestamp>2023-11-21.09:08:51</LocalIntrospectionTimestamp>
+      <ModifiedTimestamp>2023-10-30.03:41:02</ModifiedTimestamp>
+      <ObjectId>1</ObjectId>
+    </schema>
+    <schema id="24" parent="1" name="REMOTE_SCHEDULER_AGENT">
+      <ObjectId>42</ObjectId>
+    </schema>
+    <schema id="25" parent="1" name="ROOT">
+      <CreatedTimestamp>2023-11-21.10:44:00</CreatedTimestamp>
+      <Current>1</Current>
+      <IntrospectionL1Timestamp>2023-11-21.10:56:07</IntrospectionL1Timestamp>
+      <IntrospectionL2Timestamp>2023-11-21.10:56:07</IntrospectionL2Timestamp>
+      <IntrospectionL3Timestamp>2023-11-21.10:56:07</IntrospectionL3Timestamp>
+      <IntrospectionVersion>200820</IntrospectionVersion>
+      <LocalIntrospectionTimestamp>2023-11-21.09:56:11</LocalIntrospectionTimestamp>
+      <ModifiedTimestamp>2023-11-21.10:56:00</ModifiedTimestamp>
+      <ObjectId>134</ObjectId>
+    </schema>
+    <schema id="26" parent="1" name="SYS">
+      <ObjectId>0</ObjectId>
+    </schema>
+    <schema id="27" parent="1" name="SYS$UMF">
+      <ObjectId>57</ObjectId>
+    </schema>
+    <schema id="28" parent="1" name="SYSBACKUP">
+      <ObjectId>2147483617</ObjectId>
+    </schema>
+    <schema id="29" parent="1" name="SYSDG">
+      <ObjectId>2147483618</ObjectId>
+    </schema>
+    <schema id="30" parent="1" name="SYSKM">
+      <ObjectId>2147483619</ObjectId>
+    </schema>
+    <schema id="31" parent="1" name="SYSRAC">
+      <ObjectId>2147483620</ObjectId>
+    </schema>
+    <schema id="32" parent="1" name="SYSTEM">
+      <ObjectId>9</ObjectId>
+    </schema>
+    <schema id="33" parent="1" name="XDB">
+      <ObjectId>87</ObjectId>
+    </schema>
+    <schema id="34" parent="1" name="XS$NULL">
+      <ObjectId>2147483638</ObjectId>
+    </schema>
+    <tablespace id="35" parent="1" name="USERS">
+      <AutoSegmentManagement>1</AutoSegmentManagement>
+      <BlockSize>8192</BlockSize>
+      <ContentCategory>P</ContentCategory>
+      <LocalExtentManagement>1</LocalExtentManagement>
+      <Logging>1</Logging>
+      <Status>E</Status>
+    </tablespace>
+    <user id="36" parent="1" name="ANONYMOUS">
+      <ObjectId>88</ObjectId>
+    </user>
+    <user id="37" parent="1" name="APPQOSSYS">
+      <ObjectId>78</ObjectId>
+    </user>
+    <user id="38" parent="1" name="AUDSYS">
+      <ObjectId>8</ObjectId>
+    </user>
+    <user id="39" parent="1" name="CTXSYS">
+      <ObjectId>120</ObjectId>
+    </user>
+    <user id="40" parent="1" name="DBSFWUSER">
+      <ObjectId>43</ObjectId>
+    </user>
+    <user id="41" parent="1" name="DBSNMP">
+      <ObjectId>77</ObjectId>
+    </user>
+    <user id="42" parent="1" name="DGPDB_INT">
+      <ObjectId>64</ObjectId>
+    </user>
+    <user id="43" parent="1" name="DIP">
+      <ObjectId>26</ObjectId>
+    </user>
+    <user id="44" parent="1" name="DVF">
+      <ObjectId>131</ObjectId>
+    </user>
+    <user id="45" parent="1" name="DVSYS">
+      <ObjectId>1279990</ObjectId>
+    </user>
+    <user id="46" parent="1" name="GGSHAREDCAP">
+      <ObjectId>55</ObjectId>
+    </user>
+    <user id="47" parent="1" name="GGSYS">
+      <ObjectId>85</ObjectId>
+    </user>
+    <user id="48" parent="1" name="GSMADMIN_INTERNAL">
+      <ObjectId>24</ObjectId>
+    </user>
+    <user id="49" parent="1" name="GSMCATUSER">
+      <ObjectId>84</ObjectId>
+    </user>
+    <user id="50" parent="1" name="GSMUSER">
+      <ObjectId>25</ObjectId>
+    </user>
+    <user id="51" parent="1" name="LBACSYS">
+      <ObjectId>129</ObjectId>
+    </user>
+    <user id="52" parent="1" name="MDDATA">
+      <ObjectId>127</ObjectId>
+    </user>
+    <user id="53" parent="1" name="MDSYS">
+      <ObjectId>126</ObjectId>
+    </user>
+    <user id="54" parent="1" name="OPS$ORACLE">
+      <ObjectId>133</ObjectId>
+    </user>
+    <user id="55" parent="1" name="OUTLN">
+      <ObjectId>13</ObjectId>
+    </user>
+    <user id="56" parent="1" name="PDBADMIN">
+      <ObjectId>132</ObjectId>
+    </user>
+    <user id="57" parent="1" name="REMOTE_SCHEDULER_AGENT">
+      <ObjectId>42</ObjectId>
+    </user>
+    <user id="58" parent="1" name="ROOT">
+      <ObjectId>134</ObjectId>
+      <DefaultTablespaceName>USERS</DefaultTablespaceName>
+      <TemporaryTablespaceName>TEMP</TemporaryTablespaceName>
+    </user>
+    <user id="59" parent="1" name="SYS">
+      <ObjectId>0</ObjectId>
+    </user>
+    <user id="60" parent="1" name="SYS$UMF">
+      <ObjectId>57</ObjectId>
+    </user>
+    <user id="61" parent="1" name="SYSBACKUP">
+      <ObjectId>2147483617</ObjectId>
+    </user>
+    <user id="62" parent="1" name="SYSDG">
+      <ObjectId>2147483618</ObjectId>
+    </user>
+    <user id="63" parent="1" name="SYSKM">
+      <ObjectId>2147483619</ObjectId>
+    </user>
+    <user id="64" parent="1" name="SYSRAC">
+      <ObjectId>2147483620</ObjectId>
+    </user>
+    <user id="65" parent="1" name="SYSTEM">
+      <ObjectId>9</ObjectId>
+    </user>
+    <user id="66" parent="1" name="XDB">
+      <ObjectId>87</ObjectId>
+    </user>
+    <user id="67" parent="1" name="XS$NULL">
+      <ObjectId>2147483638</ObjectId>
+    </user>
+    <sequence id="68" parent="25" name="ISEQ$$_71426">
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>20</CacheSize>
+      <CreatedTimestamp>2023-11-21.10:44:00</CreatedTimestamp>
+      <DetailsLevel>2</DetailsLevel>
+      <ModifiedTimestamp>2023-11-21.10:44:00</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>71427</ObjectId>
+      <SequenceIdentity>1(1)</SequenceIdentity>
+    </sequence>
+    <sequence id="69" parent="25" name="ISEQ$$_71430">
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>20</CacheSize>
+      <CreatedTimestamp>2023-11-21.10:47:25</CreatedTimestamp>
+      <DetailsLevel>2</DetailsLevel>
+      <ModifiedTimestamp>2023-11-21.10:47:25</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>71431</ObjectId>
+      <SequenceIdentity>1(1)</SequenceIdentity>
+    </sequence>
+    <sequence id="70" parent="25" name="ISEQ$$_71435">
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>20</CacheSize>
+      <CreatedTimestamp>2023-11-21.10:51:06</CreatedTimestamp>
+      <DetailsLevel>2</DetailsLevel>
+      <ModifiedTimestamp>2023-11-21.10:51:06</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>71436</ObjectId>
+      <SequenceIdentity>1(1)</SequenceIdentity>
+    </sequence>
+    <sequence id="71" parent="25" name="ISEQ$$_71440">
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>20</CacheSize>
+      <CreatedTimestamp>2023-11-21.10:56:00</CreatedTimestamp>
+      <DetailsLevel>2</DetailsLevel>
+      <ModifiedTimestamp>2023-11-21.10:56:00</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>71441</ObjectId>
+      <SequenceIdentity>1(1)</SequenceIdentity>
+    </sequence>
+    <table id="72" parent="25" name="CLIENTES">
+      <CreatedTimestamp>2023-11-21.10:44:00</CreatedTimestamp>
+      <DetailsLevel>3</DetailsLevel>
+      <ModifiedTimestamp>2023-11-21.10:44:00</ModifiedTimestamp>
+      <ObjectId>71426</ObjectId>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="73" parent="25" name="PRODUCTOS">
+      <CreatedTimestamp>2023-11-21.10:47:25</CreatedTimestamp>
+      <DetailsLevel>3</DetailsLevel>
+      <ModifiedTimestamp>2023-11-21.10:47:25</ModifiedTimestamp>
+      <ObjectId>71430</ObjectId>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="74" parent="25" name="VENTAPROD">
+      <CreatedTimestamp>2023-11-21.10:56:00</CreatedTimestamp>
+      <DetailsLevel>3</DetailsLevel>
+      <ModifiedTimestamp>2023-11-21.10:56:00</ModifiedTimestamp>
+      <ObjectId>71440</ObjectId>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <column id="75" parent="72" name="ID">
+      <DasType>NUMBER(*)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <SequenceName>ISEQ$$_71426</SequenceName>
+    </column>
+    <column id="76" parent="72" name="NIF">
+      <DasType>VARCHAR2(10 byte)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="77" parent="72" name="NOMBRE">
+      <DasType>VARCHAR2(14 byte)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="78" parent="72" name="LOCALIDAD">
+      <DasType>VARCHAR2(14 byte)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <index id="79" parent="72" name="PK_CLIEN">
+      <ColNames>ID</ColNames>
+      <CreatedTimestamp>2023-11-21.10:44:00</CreatedTimestamp>
+      <ModifiedTimestamp>2023-11-21.10:44:00</ModifiedTimestamp>
+      <ObjectId>71428</ObjectId>
+      <Unique>1</Unique>
+      <TablespaceName>USERS</TablespaceName>
+    </index>
+    <index id="80" parent="72" name="SYS_C008291">
+      <ColNames>NIF</ColNames>
+      <CreatedTimestamp>2023-11-21.10:44:00</CreatedTimestamp>
+      <ModifiedTimestamp>2023-11-21.10:44:00</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>71429</ObjectId>
+      <Unique>1</Unique>
+      <TablespaceName>USERS</TablespaceName>
+    </index>
+    <key id="81" parent="72" name="PK_CLIEN">
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <ModifiedTimestamp>2023-11-21.10:44:00</ModifiedTimestamp>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PK_CLIEN</UnderlyingIndexName>
+    </key>
+    <key id="82" parent="72" name="SYS_C008291">
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <ModifiedTimestamp>2023-11-21.10:44:00</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <UnderlyingIndexName>SYS_C008291</UnderlyingIndexName>
+    </key>
+    <column id="83" parent="73" name="ID">
+      <DasType>NUMBER(*)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <SequenceName>ISEQ$$_71430</SequenceName>
+    </column>
+    <column id="84" parent="73" name="COD_PRODUCTO">
+      <DasType>NUMBER(4)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="85" parent="73" name="DESCRIPCION">
+      <DasType>VARCHAR2(20 byte)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="86" parent="73" name="LINEA_PRODUCTO">
+      <DasType>VARCHAR2(10 byte)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="87" parent="73" name="PRECIO">
+      <DasType>NUMBER(4)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <index id="88" parent="73" name="PK_PRODUCT">
+      <ColNames>ID</ColNames>
+      <CreatedTimestamp>2023-11-21.10:47:25</CreatedTimestamp>
+      <ModifiedTimestamp>2023-11-21.10:47:25</ModifiedTimestamp>
+      <ObjectId>71432</ObjectId>
+      <Unique>1</Unique>
+      <TablespaceName>USERS</TablespaceName>
+    </index>
+    <index id="89" parent="73" name="SYS_C008296">
+      <ColNames>COD_PRODUCTO</ColNames>
+      <CreatedTimestamp>2023-11-21.10:47:25</CreatedTimestamp>
+      <ModifiedTimestamp>2023-11-21.10:47:25</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>71433</ObjectId>
+      <Unique>1</Unique>
+      <TablespaceName>USERS</TablespaceName>
+    </index>
+    <key id="90" parent="73" name="PK_PRODUCT">
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <ModifiedTimestamp>2023-11-21.10:47:25</ModifiedTimestamp>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PK_PRODUCT</UnderlyingIndexName>
+    </key>
+    <key id="91" parent="73" name="SYS_C008296">
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <ModifiedTimestamp>2023-11-21.10:47:25</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <UnderlyingIndexName>SYS_C008296</UnderlyingIndexName>
+    </key>
+    <column id="92" parent="74" name="ID">
+      <DasType>NUMBER(*)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <SequenceName>ISEQ$$_71440</SequenceName>
+    </column>
+    <column id="93" parent="74" name="NIF">
+      <DasType>VARCHAR2(10 byte)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="94" parent="74" name="COD_PRODUCTO">
+      <DasType>NUMBER(4)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="95" parent="74" name="UNIDADES">
+      <DasType>NUMBER(4)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="96" parent="74" name="FECHA">
+      <DasType>DATE|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="97" parent="74" name="FK_NIF">
+      <ColNames>NIF</ColNames>
+      <ModifiedTimestamp>2023-11-21.10:56:00</ModifiedTimestamp>
+      <OnDelete>restrict</OnDelete>
+      <RefKeyName>SYS_C008291</RefKeyName>
+      <RefTableName>CLIENTES</RefTableName>
+    </foreign-key>
+    <foreign-key id="98" parent="74" name="FK_COD_PRODUCTO">
+      <ColNames>COD_PRODUCTO</ColNames>
+      <ModifiedTimestamp>2023-11-21.10:56:00</ModifiedTimestamp>
+      <OnDelete>restrict</OnDelete>
+      <RefKeyName>SYS_C008296</RefKeyName>
+      <RefTableName>PRODUCTOS</RefTableName>
+    </foreign-key>
+    <index id="99" parent="74" name="PK_VENTAPROD">
+      <ColNames>ID</ColNames>
+      <CreatedTimestamp>2023-11-21.10:56:00</CreatedTimestamp>
+      <ModifiedTimestamp>2023-11-21.10:56:00</ModifiedTimestamp>
+      <ObjectId>71442</ObjectId>
+      <Unique>1</Unique>
+      <TablespaceName>USERS</TablespaceName>
+    </index>
+    <key id="100" parent="74" name="PK_VENTAPROD">
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <ModifiedTimestamp>2023-11-21.10:56:00</ModifiedTimestamp>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PK_VENTAPROD</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>
