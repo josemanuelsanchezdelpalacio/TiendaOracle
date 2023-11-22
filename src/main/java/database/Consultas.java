@@ -1,11 +1,9 @@
 package database;
 
-import entities.ClientesEntity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Query;
 
-import java.sql.Date;
 import java.util.List;
 
 public class Consultas {

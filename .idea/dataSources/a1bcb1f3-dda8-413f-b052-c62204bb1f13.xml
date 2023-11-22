@@ -82,12 +82,12 @@
     <schema id="25" parent="1" name="ROOT">
       <CreatedTimestamp>2023-11-21.10:44:00</CreatedTimestamp>
       <Current>1</Current>
-      <IntrospectionL1Timestamp>2023-11-21.10:56:07</IntrospectionL1Timestamp>
-      <IntrospectionL2Timestamp>2023-11-21.10:56:07</IntrospectionL2Timestamp>
-      <IntrospectionL3Timestamp>2023-11-21.10:56:07</IntrospectionL3Timestamp>
+      <IntrospectionL1Timestamp>2023-11-22.13:54:10</IntrospectionL1Timestamp>
+      <IntrospectionL2Timestamp>2023-11-22.13:54:10</IntrospectionL2Timestamp>
+      <IntrospectionL3Timestamp>2023-11-22.13:54:10</IntrospectionL3Timestamp>
       <IntrospectionVersion>200820</IntrospectionVersion>
-      <LocalIntrospectionTimestamp>2023-11-21.09:56:11</LocalIntrospectionTimestamp>
-      <ModifiedTimestamp>2023-11-21.10:56:00</ModifiedTimestamp>
+      <LocalIntrospectionTimestamp>2023-11-22.12:54:13</LocalIntrospectionTimestamp>
+      <ModifiedTimestamp>2023-11-22.12:44:21</ModifiedTimestamp>
       <ObjectId>134</ObjectId>
     </schema>
     <schema id="26" parent="1" name="SYS">
@@ -263,178 +263,218 @@
       <ObjectId>71441</ObjectId>
       <SequenceIdentity>1(1)</SequenceIdentity>
     </sequence>
-    <table id="72" parent="25" name="CLIENTES">
-      <CreatedTimestamp>2023-11-21.10:44:00</CreatedTimestamp>
+    <sequence id="72" parent="25" name="ISEQ$$_71992">
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>20</CacheSize>
+      <CreatedTimestamp>2023-11-22.12:41:24</CreatedTimestamp>
+      <DetailsLevel>2</DetailsLevel>
+      <ModifiedTimestamp>2023-11-22.12:41:24</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>71993</ObjectId>
+      <SequenceIdentity>1(1)</SequenceIdentity>
+    </sequence>
+    <sequence id="73" parent="25" name="ISEQ$$_71996">
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>20</CacheSize>
+      <CreatedTimestamp>2023-11-22.12:42:53</CreatedTimestamp>
+      <DetailsLevel>2</DetailsLevel>
+      <ModifiedTimestamp>2023-11-22.12:42:53</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>71997</ObjectId>
+      <SequenceIdentity>1(1)</SequenceIdentity>
+    </sequence>
+    <sequence id="74" parent="25" name="ISEQ$$_72000">
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>20</CacheSize>
+      <CreatedTimestamp>2023-11-22.12:43:45</CreatedTimestamp>
+      <DetailsLevel>2</DetailsLevel>
+      <ModifiedTimestamp>2023-11-22.12:43:45</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>72001</ObjectId>
+      <SequenceIdentity>1(21)</SequenceIdentity>
+    </sequence>
+    <sequence id="75" parent="25" name="ISEQ$$_72004">
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>20</CacheSize>
+      <CreatedTimestamp>2023-11-22.12:44:21</CreatedTimestamp>
+      <DetailsLevel>2</DetailsLevel>
+      <ModifiedTimestamp>2023-11-22.12:44:21</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>72005</ObjectId>
+      <SequenceIdentity>1(1)</SequenceIdentity>
+    </sequence>
+    <table id="76" parent="25" name="CLIENTES">
+      <CreatedTimestamp>2023-11-22.12:42:53</CreatedTimestamp>
       <DetailsLevel>3</DetailsLevel>
-      <ModifiedTimestamp>2023-11-21.10:44:00</ModifiedTimestamp>
-      <ObjectId>71426</ObjectId>
+      <ModifiedTimestamp>2023-11-22.12:42:53</ModifiedTimestamp>
+      <ObjectId>71996</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="73" parent="25" name="PRODUCTOS">
-      <CreatedTimestamp>2023-11-21.10:47:25</CreatedTimestamp>
+    <table id="77" parent="25" name="PRODUCTOS">
+      <CreatedTimestamp>2023-11-22.12:43:45</CreatedTimestamp>
       <DetailsLevel>3</DetailsLevel>
-      <ModifiedTimestamp>2023-11-21.10:47:25</ModifiedTimestamp>
-      <ObjectId>71430</ObjectId>
+      <ModifiedTimestamp>2023-11-22.12:43:45</ModifiedTimestamp>
+      <ObjectId>72000</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="74" parent="25" name="VENTAPROD">
-      <CreatedTimestamp>2023-11-21.10:56:00</CreatedTimestamp>
+    <table id="78" parent="25" name="VENTAPROD">
+      <CreatedTimestamp>2023-11-22.12:44:21</CreatedTimestamp>
       <DetailsLevel>3</DetailsLevel>
-      <ModifiedTimestamp>2023-11-21.10:56:00</ModifiedTimestamp>
-      <ObjectId>71440</ObjectId>
+      <ModifiedTimestamp>2023-11-22.12:44:21</ModifiedTimestamp>
+      <ObjectId>72004</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <column id="75" parent="72" name="ID">
+    <column id="79" parent="76" name="ID">
       <DasType>NUMBER(*)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceName>ISEQ$$_71426</SequenceName>
+      <SequenceName>ISEQ$$_71996</SequenceName>
     </column>
-    <column id="76" parent="72" name="NIF">
+    <column id="80" parent="76" name="NIF">
       <DasType>VARCHAR2(10 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="77" parent="72" name="NOMBRE">
+    <column id="81" parent="76" name="NOMBRE">
       <DasType>VARCHAR2(14 byte)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="78" parent="72" name="LOCALIDAD">
+    <column id="82" parent="76" name="LOCALIDAD">
       <DasType>VARCHAR2(14 byte)|0s</DasType>
       <Position>4</Position>
     </column>
-    <index id="79" parent="72" name="PK_CLIEN">
+    <index id="83" parent="76" name="PK_CLIEN">
       <ColNames>ID</ColNames>
-      <CreatedTimestamp>2023-11-21.10:44:00</CreatedTimestamp>
-      <ModifiedTimestamp>2023-11-21.10:44:00</ModifiedTimestamp>
-      <ObjectId>71428</ObjectId>
+      <CreatedTimestamp>2023-11-22.12:42:53</CreatedTimestamp>
+      <ModifiedTimestamp>2023-11-22.12:42:53</ModifiedTimestamp>
+      <ObjectId>71998</ObjectId>
       <Unique>1</Unique>
       <TablespaceName>USERS</TablespaceName>
     </index>
-    <index id="80" parent="72" name="SYS_C008291">
+    <index id="84" parent="76" name="SYS_C008320">
       <ColNames>NIF</ColNames>
-      <CreatedTimestamp>2023-11-21.10:44:00</CreatedTimestamp>
-      <ModifiedTimestamp>2023-11-21.10:44:00</ModifiedTimestamp>
+      <CreatedTimestamp>2023-11-22.12:42:53</CreatedTimestamp>
+      <ModifiedTimestamp>2023-11-22.12:42:53</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>71429</ObjectId>
+      <ObjectId>71999</ObjectId>
       <Unique>1</Unique>
       <TablespaceName>USERS</TablespaceName>
     </index>
-    <key id="81" parent="72" name="PK_CLIEN">
+    <key id="85" parent="76" name="PK_CLIEN">
       <InitiallyDeferred>1</InitiallyDeferred>
-      <ModifiedTimestamp>2023-11-21.10:44:00</ModifiedTimestamp>
+      <ModifiedTimestamp>2023-11-22.12:42:53</ModifiedTimestamp>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK_CLIEN</UnderlyingIndexName>
     </key>
-    <key id="82" parent="72" name="SYS_C008291">
+    <key id="86" parent="76" name="SYS_C008320">
       <InitiallyDeferred>1</InitiallyDeferred>
-      <ModifiedTimestamp>2023-11-21.10:44:00</ModifiedTimestamp>
+      <ModifiedTimestamp>2023-11-22.12:42:53</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
-      <UnderlyingIndexName>SYS_C008291</UnderlyingIndexName>
+      <UnderlyingIndexName>SYS_C008320</UnderlyingIndexName>
     </key>
-    <column id="83" parent="73" name="ID">
+    <column id="87" parent="77" name="ID">
       <DasType>NUMBER(*)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceName>ISEQ$$_71430</SequenceName>
+      <SequenceName>ISEQ$$_72000</SequenceName>
     </column>
-    <column id="84" parent="73" name="COD_PRODUCTO">
+    <column id="88" parent="77" name="COD_PRODUCTO">
       <DasType>NUMBER(4)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="85" parent="73" name="DESCRIPCION">
+    <column id="89" parent="77" name="DESCRIPCION">
       <DasType>VARCHAR2(20 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="86" parent="73" name="LINEA_PRODUCTO">
+    <column id="90" parent="77" name="LINEA_PRODUCTO">
       <DasType>VARCHAR2(10 byte)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="87" parent="73" name="PRECIO">
+    <column id="91" parent="77" name="PRECIO">
       <DasType>NUMBER(4)|0s</DasType>
       <Position>5</Position>
     </column>
-    <index id="88" parent="73" name="PK_PRODUCT">
+    <index id="92" parent="77" name="PK_PRODUCT">
       <ColNames>ID</ColNames>
-      <CreatedTimestamp>2023-11-21.10:47:25</CreatedTimestamp>
-      <ModifiedTimestamp>2023-11-21.10:47:25</ModifiedTimestamp>
-      <ObjectId>71432</ObjectId>
+      <CreatedTimestamp>2023-11-22.12:43:45</CreatedTimestamp>
+      <ModifiedTimestamp>2023-11-22.12:43:45</ModifiedTimestamp>
+      <ObjectId>72002</ObjectId>
       <Unique>1</Unique>
       <TablespaceName>USERS</TablespaceName>
     </index>
-    <index id="89" parent="73" name="SYS_C008296">
+    <index id="93" parent="77" name="SYS_C008325">
       <ColNames>COD_PRODUCTO</ColNames>
-      <CreatedTimestamp>2023-11-21.10:47:25</CreatedTimestamp>
-      <ModifiedTimestamp>2023-11-21.10:47:25</ModifiedTimestamp>
+      <CreatedTimestamp>2023-11-22.12:43:45</CreatedTimestamp>
+      <ModifiedTimestamp>2023-11-22.12:43:45</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>71433</ObjectId>
+      <ObjectId>72003</ObjectId>
       <Unique>1</Unique>
       <TablespaceName>USERS</TablespaceName>
     </index>
-    <key id="90" parent="73" name="PK_PRODUCT">
+    <key id="94" parent="77" name="PK_PRODUCT">
       <InitiallyDeferred>1</InitiallyDeferred>
-      <ModifiedTimestamp>2023-11-21.10:47:25</ModifiedTimestamp>
+      <ModifiedTimestamp>2023-11-22.12:43:45</ModifiedTimestamp>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK_PRODUCT</UnderlyingIndexName>
     </key>
-    <key id="91" parent="73" name="SYS_C008296">
+    <key id="95" parent="77" name="SYS_C008325">
       <InitiallyDeferred>1</InitiallyDeferred>
-      <ModifiedTimestamp>2023-11-21.10:47:25</ModifiedTimestamp>
+      <ModifiedTimestamp>2023-11-22.12:43:45</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
-      <UnderlyingIndexName>SYS_C008296</UnderlyingIndexName>
+      <UnderlyingIndexName>SYS_C008325</UnderlyingIndexName>
     </key>
-    <column id="92" parent="74" name="ID">
+    <column id="96" parent="78" name="ID">
       <DasType>NUMBER(*)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <SequenceName>ISEQ$$_71440</SequenceName>
+      <SequenceName>ISEQ$$_72004</SequenceName>
     </column>
-    <column id="93" parent="74" name="NIF">
-      <DasType>VARCHAR2(10 byte)|0s</DasType>
+    <column id="97" parent="78" name="ID_CLIENTE">
+      <DasType>NUMBER(*)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="94" parent="74" name="COD_PRODUCTO">
+    <column id="98" parent="78" name="ID_PRODUCTO">
       <DasType>NUMBER(4)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="95" parent="74" name="UNIDADES">
+    <column id="99" parent="78" name="UNIDADES">
       <DasType>NUMBER(4)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="96" parent="74" name="FECHA">
+    <column id="100" parent="78" name="FECHA">
       <DasType>DATE|0s</DasType>
       <Position>5</Position>
     </column>
-    <foreign-key id="97" parent="74" name="FK_NIF">
-      <ColNames>NIF</ColNames>
-      <ModifiedTimestamp>2023-11-21.10:56:00</ModifiedTimestamp>
+    <foreign-key id="101" parent="78" name="FK_CLIENTE">
+      <ColNames>ID_CLIENTE</ColNames>
+      <ModifiedTimestamp>2023-11-22.12:44:21</ModifiedTimestamp>
       <OnDelete>restrict</OnDelete>
-      <RefKeyName>SYS_C008291</RefKeyName>
+      <RefKeyName>PK_CLIEN</RefKeyName>
       <RefTableName>CLIENTES</RefTableName>
     </foreign-key>
-    <foreign-key id="98" parent="74" name="FK_COD_PRODUCTO">
-      <ColNames>COD_PRODUCTO</ColNames>
-      <ModifiedTimestamp>2023-11-21.10:56:00</ModifiedTimestamp>
+    <foreign-key id="102" parent="78" name="FK_PRODUCTO">
+      <ColNames>ID_PRODUCTO</ColNames>
+      <ModifiedTimestamp>2023-11-22.12:44:21</ModifiedTimestamp>
       <OnDelete>restrict</OnDelete>
-      <RefKeyName>SYS_C008296</RefKeyName>
+      <RefKeyName>PK_PRODUCT</RefKeyName>
       <RefTableName>PRODUCTOS</RefTableName>
     </foreign-key>
-    <index id="99" parent="74" name="PK_VENTAPROD">
+    <index id="103" parent="78" name="PK_VENTAPROD">
       <ColNames>ID</ColNames>
-      <CreatedTimestamp>2023-11-21.10:56:00</CreatedTimestamp>
-      <ModifiedTimestamp>2023-11-21.10:56:00</ModifiedTimestamp>
-      <ObjectId>71442</ObjectId>
+      <CreatedTimestamp>2023-11-22.12:44:21</CreatedTimestamp>
+      <ModifiedTimestamp>2023-11-22.12:44:21</ModifiedTimestamp>
+      <ObjectId>72006</ObjectId>
       <Unique>1</Unique>
       <TablespaceName>USERS</TablespaceName>
     </index>
-    <key id="100" parent="74" name="PK_VENTAPROD">
+    <key id="104" parent="78" name="PK_VENTAPROD">
       <InitiallyDeferred>1</InitiallyDeferred>
-      <ModifiedTimestamp>2023-11-21.10:56:00</ModifiedTimestamp>
+      <ModifiedTimestamp>2023-11-22.12:44:21</ModifiedTimestamp>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK_VENTAPROD</UnderlyingIndexName>
     </key>
