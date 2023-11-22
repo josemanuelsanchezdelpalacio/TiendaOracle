@@ -8,10 +8,10 @@ import java.util.List;
 
 public class Consultas {
 
-    public static void listarClientes(EntityManager em) {
+    /*public static void listarClientes(EntityManager em) {
         List<ClientesEntity> clientes = em.createQuery("from ClientesEntity",  ClientesEntity.class).getResultList();
         for (ClientesEntity c : clientes){
             System.out.println(c.getNombre());
         }
-    }
+    }*/
 }
