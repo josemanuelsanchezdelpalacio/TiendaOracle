@@ -14,14 +14,28 @@ public class Main {
         int opcion;
         do {
             System.out.println("0. Salir");
-            System.out.println("1. Listar clientes");
+            System.out.println("1. Listar clientes y numero de articulos que ha comprado");
+            System.out.println("2. Listar productos y numero de unidades vendidas");
+            System.out.println("3. Insertar venta");
+            System.out.println("4. Obtener listado de ventas de un cliente");
 
             opcion = Leer.pedirEntero("Introduce una opción: ");
 
             switch (opcion) {
-                case 0 -> {salir = true;}
-                case 1 -> {Consultas.listarClientes(em);}
-                default -> {System.out.println("La opcion seleccionada no existe");}
+                case 0:
+                    salir = true;
+                    break;
+                case 1:
+                    Consultas.listarClientes(em);
+                    break;
+                case 2:
+                    Consultas.listarProductos(em);
+                    break;
+                case 3:
+
+                    break;
+                default:
+                    System.out.println("La opcion seleccionada no existe");
             }
             desconectar();
         } while (!salir);
