@@ -51,14 +51,78 @@ public class Consultas {
     /**
      * Insertar una venta (controlando que el cliente exista, el producto exista y tenga stock)
      **/
-    public static void insertarVentas(EntityManager em) {
-        List<VentaprodEntity> productos = em.createQuery("from VentaprodEntity where exists(select idCliente, idProducto from VentaprodEntity.idCliente, VentaprodEntity.idProducto)", VentaprodEntity.class).getResultList();
-        for (VentaprodEntity v : productos) {
-            v.setIdCliente(1);
-            v.setIdProducto(1);
-            v.setUnidades();
-            v.setFecha(Date.valueOf("2005-01-01"));
-            em.persist(v);
+    public static void insertarVenta(EntityManager em, long idCliente, long idProducto, short unidades) {
+        // Verificar que el cliente existe
+        ClientesEntity cliente = em.find(ClientesEntity.class, idCliente);
+        if (cliente == null) {
+            System.out.println("Cliente no encontrado.");
+            return;
         }
+
+        // Verificar que el producto existe y tiene stock
+        ProductosEntity producto = em.find(ProductosEntity.class, idProducto);
+        if (producto == null) {
+            System.out.println("Producto no encontrado.");
+            return;
+        }
+        if (producto.getStock() < unidades) {
+            System.out.println("No hay suficiente stock para realizar la venta.");
+            return;
+        }
+
+        // Realizar la venta
+        VentaprodEntity venta = new VentaprodEntity();
+        venta.setIdCliente(idCliente);
+        venta.setIdProducto(idProducto);
+        venta.setUnidades(unidades);
+        venta.setFecha(new Date());
+
+        em.getTransaction().begin();
+        em.persist(venta);  // Utilizamos persist para insertar la nueva venta
+        em.getTransaction().commit();
+
+        System.out.println("Venta realizada con éxito.");
+    }
+
+    public static void listarVentasClienteDetallado(EntityManager em, long idCliente) {
+        // Consulta HQL para obtener las ventas del cliente con detalles
+        List<ClientesEntity> results = em.createQuery(
+                "SELECT v.id, v.fecha, p.descripcion, v.unidades, p.precio " +
+                        "FROM VentaprodEntity v " +
+                        "JOIN ProductosEntity p ON v.idProducto = p.id " +
+                        "WHERE v.idCliente = :idCliente", ClientesEntity.class)
+                .setParameter("idCliente", idCliente)
+                .getResultList();
+
+        // Variables para cálculos totales
+        int numeroTotalVentas = 0;
+        double importeTotal = 0.0;
+
+        System.out.println("Ventas del cliente: " + em.find(ClientesEntity.class, idCliente).getNombre() + "\n");
+
+        for (ClientesEntity result : results) {
+            long idVenta = (long) result[0];
+            Date fechaVenta = (Date) result[1];
+            String descripcionProducto = (String) result[2];
+            short unidades = (short) result[3];
+            Short precioProducto = (Short) result[4];
+
+            // Calcular importe para esta venta
+            double importeVenta = unidades * precioProducto;
+
+            // Imprimir información detallada de la venta
+            System.out.println("Venta: " + idVenta + " , Fecha venta: " + fechaVenta);
+            System.out.println("Producto: " + descripcionProducto);
+            System.out.println("Cantidad: " + unidades + " PVP: " + precioProducto);
+            System.out.println("Importe: " + importeVenta + "\n");
+
+            // Actualizar totales
+            numeroTotalVentas++;
+            importeTotal += importeVenta;
+        }
+
+        // Imprimir totales
+        System.out.println("Número total de ventas: " + numeroTotalVentas);
+        System.out.println("Importe Total: " + importeTotal);
     }
 }
