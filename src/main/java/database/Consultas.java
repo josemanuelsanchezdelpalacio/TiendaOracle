@@ -88,25 +88,39 @@ public class Consultas {
     }
 
     public static void listarVentasClienteDetallado(EntityManager em, long idCliente) {
-        // Consulta HQL para obtener las ventas del cliente con detalles
-        List<ClientesEntity> clientes = em.createQuery(
-                "SELECT v.id, v.fecha, p.descripcion, v.unidades, p.precio " +
-                        "FROM VentaprodEntity v " +
-                        "JOIN ProductosEntity p ON v.idProducto = p.id " +
-                        "WHERE v.idCliente = :idCliente", ClientesEntity.class)
-                .setParameter("idCliente", idCliente)
-                .getResultList();
+    // Consulta HQL para obtener las ventas del cliente con detalles
+    List<VentaprodEntity> ventas = em.createQuery(
+            "FROM VentaprodEntity v " +
+                    "JOIN FETCH v.producto p " +
+                    "WHERE v.idCliente = :idCliente", VentaprodEntity.class)
+            .setParameter("idCliente", idCliente)
+            .getResultList();
 
-        // Variables para cálculos totales
-        int numeroTotalVentas = 0;
-        double importeTotal = 0.0;
+    // Variables para cálculos totales
+    int numeroTotalVentas = 0;
+    double importeTotal = 0.0;
 
-        for(ClientesEntity cliente : clientes){
-            System.out.println("Ventas del clie: " + cliente.getNombre());
-        }
+    // Imprimir encabezado
+    ClientesEntity cliente = em.find(ClientesEntity.class, idCliente);
+    System.out.println("Ventas del cliente: " + cliente.getNombre() + "\n");
 
-        // Imprimir totales
-        System.out.println("Número total de ventas: " + numeroTotalVentas);
-        System.out.println("Importe Total: " + importeTotal);
+    for (VentaprodEntity venta : ventas) {
+        // Calcular importe para esta venta
+        double importeVenta = venta.getUnidades() * venta.getProducto().getPrecio();
+
+        // Imprimir información detallada de la venta
+        System.out.println("Venta: idventa " + venta.getId() + ", Fecha venta: " + venta.getFecha());
+        System.out.println("Producto: " + venta.getProducto().getDescripcion());
+        System.out.println("Cantidad: " + venta.getUnidades() + " PVP: " + venta.getProducto().getPrecio());
+        System.out.println("Importe: " + importeVenta + "\n");
+
+        // Actualizar totales
+        numeroTotalVentas++;
+        importeTotal += importeVenta;
     }
+
+    // Imprimir totales
+    System.out.println("Número total de ventas: " + numeroTotalVentas);
+    System.out.println("Importe Total: " + importeTotal);
+}
 }
