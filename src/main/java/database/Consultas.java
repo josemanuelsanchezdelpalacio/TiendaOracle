@@ -10,6 +10,8 @@ import jakarta.persistence.Query;
 import libs.Leer;
 
 import java.sql.Date;
+import java.time.Instant;
+import java.time.LocalDate;
 import java.util.List;
 
 public class Consultas {
@@ -49,36 +51,37 @@ public class Consultas {
     }
 
     /**
-     * Insertar una venta (controlando que el cliente exista, el producto exista y tenga stock)
+     * Insertar una venta (controlando que el cliente exista, el producto exista y tenga stock (el stock no existe en el sql))
      **/
-    public static void insertarVenta(EntityManager em, long idCliente, long idProducto, short unidades) {
-        // Verificar que el cliente existe
+    public static void insertarVenta(EntityManager em) {
+        long idCliente = Leer.pedirEntero("Introduce Id de cliente: ");
+        long idProducto = Leer.pedirEntero("Introduce Id de producto: ");
+        short unidades = (short) Leer.pedirEntero("Introduce numero de unidades: ");
+        
+        //compruebo que el cliente exista
         ClientesEntity cliente = em.find(ClientesEntity.class, idCliente);
         if (cliente == null) {
             System.out.println("Cliente no encontrado.");
             return;
         }
 
-        // Verificar que el producto existe y tiene stock
+        //compruebo que el producto existe
         ProductosEntity producto = em.find(ProductosEntity.class, idProducto);
         if (producto == null) {
             System.out.println("Producto no encontrado.");
             return;
         }
-        if (producto.getStock() < unidades) {
-            System.out.println("No hay suficiente stock para realizar la venta.");
-            return;
-        }
 
-        // Realizar la venta
+        //insertamos los datos
         VentaprodEntity venta = new VentaprodEntity();
         venta.setIdCliente(idCliente);
         venta.setIdProducto(idProducto);
         venta.setUnidades(unidades);
-        venta.setFecha(new Date());
+        venta.setFecha(Date.valueOf(LocalDate.now()));
 
+        // para insertar la nueva venta
         em.getTransaction().begin();
-        em.persist(venta);  // Utilizamos persist para insertar la nueva venta
+        em.persist(venta);
         em.getTransaction().commit();
 
         System.out.println("Venta realizada con éxito.");
@@ -86,7 +89,7 @@ public class Consultas {
 
     public static void listarVentasClienteDetallado(EntityManager em, long idCliente) {
         // Consulta HQL para obtener las ventas del cliente con detalles
-        List<ClientesEntity> results = em.createQuery(
+        List<ClientesEntity> clientes = em.createQuery(
                 "SELECT v.id, v.fecha, p.descripcion, v.unidades, p.precio " +
                         "FROM VentaprodEntity v " +
                         "JOIN ProductosEntity p ON v.idProducto = p.id " +
@@ -98,27 +101,8 @@ public class Consultas {
         int numeroTotalVentas = 0;
         double importeTotal = 0.0;
 
-        System.out.println("Ventas del cliente: " + em.find(ClientesEntity.class, idCliente).getNombre() + "\n");
-
-        for (ClientesEntity result : results) {
-            long idVenta = (long) result[0];
-            Date fechaVenta = (Date) result[1];
-            String descripcionProducto = (String) result[2];
-            short unidades = (short) result[3];
-            Short precioProducto = (Short) result[4];
-
-            // Calcular importe para esta venta
-            double importeVenta = unidades * precioProducto;
-
-            // Imprimir información detallada de la venta
-            System.out.println("Venta: " + idVenta + " , Fecha venta: " + fechaVenta);
-            System.out.println("Producto: " + descripcionProducto);
-            System.out.println("Cantidad: " + unidades + " PVP: " + precioProducto);
-            System.out.println("Importe: " + importeVenta + "\n");
-
-            // Actualizar totales
-            numeroTotalVentas++;
-            importeTotal += importeVenta;
+        for(ClientesEntity cliente : clientes){
+            System.out.println("Ventas del clie: " + cliente.getNombre());
         }
 
         // Imprimir totales

@@ -32,13 +32,13 @@ public class Main {
                     Consultas.listarProductos(em);
                     break;
                 case 3:
-
+                    Consultas.insertarVenta(em);
                     break;
                 default:
                     System.out.println("La opcion seleccionada no existe");
             }
-            desconectar();
         } while (!salir);
+        desconectar();
     }
 
     private static void desconectar() {
