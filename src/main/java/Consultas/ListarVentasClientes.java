@@ -19,25 +19,23 @@ public class ListarVentasClientes {
         ClientesEntity cliente = em.find(ClientesEntity.class, idCliente);
         System.out.println("Ventas del cliente: " + cliente.getNombre() + "\n");
 
-        List<ProductosEntity> productos = em.createQuery("from ProductosEntity", ProductosEntity.class).getResultList();
-        for (ProductosEntity producto : productos) {
+        Query q = em.createQuery("from VentaprodEntity where idCliente=?1").setParameter(1, idCliente);
+        List<VentaprodEntity> ventas = q.getResultList();
 
-            Query q = em.createQuery("from VentaprodEntity where idProducto=?1").setParameter(1, producto.getId());
-            List<VentaprodEntity> ventas = q.getResultList();
-            for (VentaprodEntity venta : ventas) {
-                double importeVenta = venta.getUnidades() * producto.getPrecio();
+        for (VentaprodEntity venta : ventas) {
+            ProductosEntity producto = em.find(ProductosEntity.class, venta.getIdProducto());
+            double importeVenta = venta.getUnidades() * producto.getPrecio();
 
-                System.out.println("Venta: " + venta.getId() + ", Fecha venta: " + venta.getFecha());
-                System.out.println("\tProducto: " + producto.getDescripcion());
-                System.out.println("\tCantidad: " + venta.getUnidades() + " PVP: " + producto.getPrecio());
-                System.out.println("\tImporte: " + importeVenta + "\n");
+            System.out.println("Venta: " + venta.getId() + ", Fecha venta: " + venta.getFecha());
+            System.out.println("\tProducto: " + producto.getDescripcion());
+            System.out.println("\tCantidad: " + venta.getUnidades() + " PVP: " + producto.getPrecio());
+            System.out.println("\tImporte: " + importeVenta + "\n");
 
-                numeroTotalVentas++;
-                importeTotal += importeVenta;
-            }
-
-            System.out.println("Número total de ventas: " + numeroTotalVentas);
-            System.out.println("Importe Total: " + importeTotal);
+            numeroTotalVentas++;
+            importeTotal += importeVenta;
         }
+
+        System.out.println("Número total de ventas: " + numeroTotalVentas);
+        System.out.println("Importe Total: " + importeTotal);
     }
 }

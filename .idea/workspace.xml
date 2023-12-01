@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff701952-340d-4b9e-80d3-db73a13a7bb3" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Consultas/InsertarVenta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Consultas/ListarVentasClientes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/Consultas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Consultas/ConsultasListar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Consultas/InsertarVenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Consultas/InsertarVenta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Consultas/ListarVentasClientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Consultas/ListarVentasClientes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +43,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Alumno_FP/IdeaProjects/SQLMuseos",
+    "last_opened_file_path": "C:/Users/Alumno_FP/IdeaProjects/PracticaSQLite",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -107,7 +104,7 @@
       <workItem from="1700810905983" duration="50000" />
       <workItem from="1700810957877" duration="6366000" />
       <workItem from="1701261752297" duration="1952000" />
-      <workItem from="1701415992170" duration="3947000" />
+      <workItem from="1701415992170" duration="6149000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
@@ -141,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701418972188</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="commit">
+      <option name="closed" value="true" />
+      <created>1701419964342</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701419964342</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

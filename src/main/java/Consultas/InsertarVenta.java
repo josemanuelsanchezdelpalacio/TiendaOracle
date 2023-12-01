@@ -13,28 +13,39 @@ public class InsertarVenta {
 
     /**Insertar una venta (controlando que el cliente exista, el producto exista y tenga stock (el stock no existe en el sql))**/
     public static void insertarVenta(EntityManager em) {
-        long idCliente = Leer.pedirEntero("Introduce Id de cliente: ");
-        long idProducto = Leer.pedirEntero("Introduce Id de producto: ");
-        short unidades = (short) Leer.pedirEntero("Introduce numero de unidades: ");
-
-        //compruebo que el cliente exista
-        ClientesEntity cliente = em.find(ClientesEntity.class, idCliente);
-        if (cliente == null) {
-            System.out.println("Cliente no encontrado.");
-            return;
-        }
-
-        //compruebo que el producto existe
-        ProductosEntity producto = em.find(ProductosEntity.class, idProducto);
-        if (producto == null) {
-            System.out.println("Producto no encontrado.");
-            return;
-        }
+        boolean validacion;
 
         //inserto los datos
         VentaprodEntity venta = new VentaprodEntity();
-        venta.setIdCliente(idCliente);
-        venta.setIdProducto(idProducto);
+
+        do {
+            validacion = true;
+            long idCliente = Leer.pedirEntero("Introduce Id de cliente: ");
+            //compruebo que el cliente exista
+            ClientesEntity cliente = em.find(ClientesEntity.class, idCliente);
+            venta.setIdCliente(idCliente);
+
+            if (cliente == null) {
+                validacion = false;
+                System.out.println("Cliente no encontrado.");
+            }
+        } while (!validacion);
+
+
+        do {
+            validacion = true;
+            long idProducto = Leer.pedirEntero("Introduce Id de producto: ");
+            //compruebo que el producto existe
+            ProductosEntity producto = em.find(ProductosEntity.class, idProducto);
+            venta.setIdProducto(idProducto);
+
+            if (producto == null) {
+                validacion = false;
+                System.out.println("Producto no encontrado.");
+            }
+        } while (!validacion);
+
+        short unidades = (short) Leer.pedirEntero("Introduce numero de unidades: ");
         venta.setUnidades(unidades);
         venta.setFecha(Date.valueOf(LocalDate.now()));
 
