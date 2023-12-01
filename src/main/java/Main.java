@@ -37,7 +37,7 @@ public class Main {
                     Consultas.insertarVenta(em);
                     break;
                 case 4:
-                    listarVentasClienteDetallado(em, Leer.pedirEntero(String.valueOf(1)));
+                    listarVentasClienteDetallado(em, Leer.pedirEntero("Ingresa el ID del cliente: "));
                 default:
                     System.out.println("La opcion seleccionada no existe");
             }

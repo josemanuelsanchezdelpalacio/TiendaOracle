@@ -57,7 +57,7 @@ public class Consultas {
         long idCliente = Leer.pedirEntero("Introduce Id de cliente: ");
         long idProducto = Leer.pedirEntero("Introduce Id de producto: ");
         short unidades = (short) Leer.pedirEntero("Introduce numero de unidades: ");
-        
+
         //compruebo que el cliente exista
         ClientesEntity cliente = em.find(ClientesEntity.class, idCliente);
         if (cliente == null) {
@@ -72,14 +72,14 @@ public class Consultas {
             return;
         }
 
-        //insertamos los datos
+        //inserto los datos
         VentaprodEntity venta = new VentaprodEntity();
         venta.setIdCliente(idCliente);
         venta.setIdProducto(idProducto);
         venta.setUnidades(unidades);
         venta.setFecha(Date.valueOf(LocalDate.now()));
 
-        // para insertar la nueva venta
+        //inserto la nueva venta
         em.getTransaction().begin();
         em.persist(venta);
         em.getTransaction().commit();
@@ -87,38 +87,34 @@ public class Consultas {
         System.out.println("Venta realizada con éxito.");
     }
 
+    /**Obtener un listado de ventas de un cliente (usa una consulta HQL para obtener la información). El listado se realizará en un método que recibirá como parámetro el id del cliente y mostrará la información como se muestra en la imagen adjunta**/
     public static void listarVentasClienteDetallado(EntityManager em, long idCliente) {
-    //consulta para obtener las ventas del cliente con detalles
-    List<VentaprodEntity> ventas = em.createQuery(
-            "FROM VentaprodEntity v " +
-                    "JOIN FETCH v.idProducto p " +
-                    "WHERE v.idCliente = :idCliente", VentaprodEntity.class)
-            .setParameter("idCliente", idCliente)
-            .getResultList();
 
-    int numeroTotalVentas = 0;
-    double importeTotal = 0.0;
+        int numeroTotalVentas = 0;
+        double importeTotal = 0.0;
 
-    ClientesEntity cliente = em.find(ClientesEntity.class, idCliente);
-    System.out.println("Ventas del cliente: " + cliente.getNombre() + "\n");
+        ClientesEntity cliente = em.find(ClientesEntity.class, idCliente);
+        System.out.println("Ventas del cliente: " + cliente.getNombre() + "\n");
 
-    ProductosEntity producto = em.find(ProductosEntity.class, idCliente);
+        List<ProductosEntity> productos = em.createQuery("from ProductosEntity", ProductosEntity.class).getResultList();
+        for (ProductosEntity producto : productos) {
 
-    for (VentaprodEntity venta : ventas) {
-        double importeVenta = venta.getUnidades() * venta.getIdProducto();
+            Query q = em.createQuery("from VentaprodEntity where idProducto=?1").setParameter(1, producto.getId());
+            List<VentaprodEntity> ventas = q.getResultList();
+            for (VentaprodEntity venta : ventas) {
+                double importeVenta = venta.getUnidades() * producto.getPrecio();
 
-        System.out.println("Venta: " + venta.getId() + ", Fecha venta: " + venta.getFecha());
-        System.out.println("Producto: " + producto.getDescripcion());
-        System.out.println("Cantidad: " + venta.getUnidades());
-        System.out.println("Importe: " + importeVenta + "\n");
+                System.out.println("Venta: " + venta.getId() + ", Fecha venta: " + venta.getFecha());
+                System.out.println("\tProducto: " + producto.getDescripcion());
+                System.out.println("\tCantidad: " + venta.getUnidades() + " PVP: " + producto.getPrecio());
+                System.out.println("\tImporte: " + importeVenta + "\n");
 
-        // Actualizar totales
-        numeroTotalVentas++;
-        importeTotal += importeVenta;
+                numeroTotalVentas++;
+                importeTotal += importeVenta;
+            }
+
+            System.out.println("Número total de ventas: " + numeroTotalVentas);
+            System.out.println("Importe Total: " + importeTotal);
+        }
     }
-
-    // Imprimir totales
-    System.out.println("Número total de ventas: " + numeroTotalVentas);
-    System.out.println("Importe Total: " + importeTotal);
-}
 }
