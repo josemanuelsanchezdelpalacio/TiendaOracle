@@ -105,7 +105,6 @@ public class Consultas {
     ProductosEntity producto = em.find(ProductosEntity.class, idCliente);
 
     for (VentaprodEntity venta : ventas) {
-        // Calcular importe para esta venta
         double importeVenta = venta.getUnidades() * venta.getIdProducto();
 
         System.out.println("Venta: " + venta.getId() + ", Fecha venta: " + venta.getFecha());
