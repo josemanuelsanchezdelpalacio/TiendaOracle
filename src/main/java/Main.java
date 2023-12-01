@@ -1,10 +1,10 @@
-import database.Consultas;
+import Consultas.ConsultasListar;
+import Consultas.InsertarVenta;
+import Consultas.ListarVentasClientes;
 import database.EmfSingleton;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import libs.Leer;
-
-import static database.Consultas.listarVentasClienteDetallado;
 
 public class Main {
 
@@ -28,16 +28,16 @@ public class Main {
                     salir = true;
                     break;
                 case 1:
-                    Consultas.listarClientes(em);
+                    ConsultasListar.listarClientes(em);
                     break;
                 case 2:
-                    Consultas.listarProductos(em);
+                    ConsultasListar.listarProductos(em);
                     break;
                 case 3:
-                    Consultas.insertarVenta(em);
+                    InsertarVenta.insertarVenta(em);
                     break;
                 case 4:
-                    listarVentasClienteDetallado(em, Leer.pedirEntero("Ingresa el ID del cliente: "));
+                    ListarVentasClientes.listarVentasClienteDetallado(em, Leer.pedirEntero("Ingresa el ID del cliente: "));
                 default:
                     System.out.println("La opcion seleccionada no existe");
             }
