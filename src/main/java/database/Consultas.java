@@ -88,30 +88,29 @@ public class Consultas {
     }
 
     public static void listarVentasClienteDetallado(EntityManager em, long idCliente) {
-    // Consulta HQL para obtener las ventas del cliente con detalles
+    //consulta para obtener las ventas del cliente con detalles
     List<VentaprodEntity> ventas = em.createQuery(
             "FROM VentaprodEntity v " +
-                    "JOIN FETCH v.producto p " +
+                    "JOIN FETCH v.idProducto p " +
                     "WHERE v.idCliente = :idCliente", VentaprodEntity.class)
             .setParameter("idCliente", idCliente)
             .getResultList();
 
-    // Variables para cálculos totales
     int numeroTotalVentas = 0;
     double importeTotal = 0.0;
 
-    // Imprimir encabezado
     ClientesEntity cliente = em.find(ClientesEntity.class, idCliente);
     System.out.println("Ventas del cliente: " + cliente.getNombre() + "\n");
 
+    ProductosEntity producto = em.find(ProductosEntity.class, idCliente);
+
     for (VentaprodEntity venta : ventas) {
         // Calcular importe para esta venta
-        double importeVenta = venta.getUnidades() * venta.getProducto().getPrecio();
+        double importeVenta = venta.getUnidades() * venta.getIdProducto();
 
-        // Imprimir información detallada de la venta
-        System.out.println("Venta: idventa " + venta.getId() + ", Fecha venta: " + venta.getFecha());
-        System.out.println("Producto: " + venta.getProducto().getDescripcion());
-        System.out.println("Cantidad: " + venta.getUnidades() + " PVP: " + venta.getProducto().getPrecio());
+        System.out.println("Venta: " + venta.getId() + ", Fecha venta: " + venta.getFecha());
+        System.out.println("Producto: " + producto.getDescripcion());
+        System.out.println("Cantidad: " + venta.getUnidades());
         System.out.println("Importe: " + importeVenta + "\n");
 
         // Actualizar totales

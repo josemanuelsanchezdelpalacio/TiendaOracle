@@ -4,6 +4,8 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import libs.Leer;
 
+import static database.Consultas.listarVentasClienteDetallado;
+
 public class Main {
 
     static EntityManagerFactory emf = EmfSingleton.getInstance().getEmf();
@@ -34,6 +36,8 @@ public class Main {
                 case 3:
                     Consultas.insertarVenta(em);
                     break;
+                case 4:
+                    listarVentasClienteDetallado(em, Leer.pedirEntero(String.valueOf(1)));
                 default:
                     System.out.println("La opcion seleccionada no existe");
             }
